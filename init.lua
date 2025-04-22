@@ -1,3 +1,5 @@
 require "init_vim"
 require "keybindings.tabs"
 require "keybindings.open_config"
+require "plugins.neotree"
+require "keybindings.neotree"
