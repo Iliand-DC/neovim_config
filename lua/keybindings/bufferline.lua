@@ -6,3 +6,4 @@ map('n', 'L', ':BufferLineCycleNext<CR>', {desc="Move to next tab", silent=true}
 
 map('n', '<leader>o', '')
 map('n', '<leader>o', ':BufferLinePick<CR>', {desc="Pick buffer from buffer line", silent=true})
+map('n', '<leader>z', ':BufferLineCloseOthers<CR>', {desc="Close all buffers except current", silent=true})
