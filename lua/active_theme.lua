@@ -3,4 +3,4 @@ require('onedark').setup {
 }
 
 -- require('onedark').load()
-vim.cmd[[ colorscheme material ]]
+vim.cmd[[ colorscheme tokyonight ]]
