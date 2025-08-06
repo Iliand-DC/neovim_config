@@ -1,1 +1,6 @@
-require ('smear_cursor').enabled = true
+-- local sm_c = require('smear_cursor')
+-- sm_c.enabled = false
+-- sm_c.setup({
+--     stiffness = 0.9,
+--     trailing_stiffness = 0.8,
+-- })
