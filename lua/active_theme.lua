@@ -1,6 +1,10 @@
 require('onedark').setup {
-    style = 'darker'
+    style = 'deep',
+    colors = {
+        fg = '#cccccc',
+
+    }
 }
 
--- require('onedark').load()
-vim.cmd[[ colorscheme tokyonight ]]
+require('onedark').load()
+-- vim.cmd[[ colorscheme tokyonight ]]

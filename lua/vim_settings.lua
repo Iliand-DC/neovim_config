@@ -143,8 +143,6 @@ autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' 
 nmap <C-s> :w<CR>
 imap <C-s> <esc>:w<CR>
 
-nnoremap <leader>f :Files<CR>
-
 --- Use tab for trigger completion with characters ahead and navigate
 --- NOTE: There's always complete item selected by default, you may want to enable
 --- no select by `"suggest.noselect": true` in your configuration file
