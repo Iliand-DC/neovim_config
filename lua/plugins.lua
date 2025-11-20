@@ -1,33 +1,58 @@
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
-Plug('junegunn/fzf', { ['do'] = function()
-  vim.fn['fzf#install']()
-end })
-Plug('tpope/vim-surround')
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
-Plug('nvim-neo-tree/neo-tree.nvim')
-Plug('folke/flash.nvim')
-Plug('akinsho/bufferline.nvim')
-Plug('nvimdev/galaxyline.nvim')
-Plug('MunifTanjim/nui.nvim')
-Plug('nvim-lua/plenary.nvim')
-Plug('nvim-tree/nvim-web-devicons')
-Plug('NeogitOrg/neogit')
-Plug('nvim-lualine/lualine.nvim')
-Plug('L3MON4D3/LuaSnip', {['tag'] = 'v2.*', ['do'] = 'make install_jsregexp'})
-Plug('neovim/nvim-lspconfig')
-Plug('rafamadriz/friendly-snippets')
-Plug('akinsho/toggleterm.nvim', {['tag'] = '*'})
-Plug('windwp/nvim-autopairs')
-Plug('s1n7ax/nvim-window-picker')
-Plug('folke/tokyonight.nvim')
-Plug('sphamba/smear-cursor.nvim')
-Plug('folke/which-key.nvim')
-Plug('mfussenegger/nvim-lint')
-Plug('echasnovski/mini.icons')
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.cmd [[packadd packer.nvim]]
+end
 
 
-vim.call('plug#end')
+-- useins.lua
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- Example with configuration options
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate', -- Command to run after installation/update
+  }
+
+  use 'neoclide/coc.nvim'
+  use 'junegunn/fzf'
+
+  use 'tpope/vim-surround'
+  use 'nvim-neo-tree/neo-tree.nvim'
+  use 'folke/flash.nvim'
+
+  use 'akinsho/bufferline.nvim'
+  use 'nvimdev/galaxyline.nvim'
+  use 'MunifTanjim/nui.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-tree/nvim-web-devicons'
+  use 'akinsho/horizon.nvim'
+  use 'NeogitOrg/neogit'
+  use 'navarasu/onedark.nvim'
+  use 'shaunsingh/nord.nvim'
+  use 'nvim-lualine/lualine.nvim'
+  use {
+      'L3MON4D3/LuaSnip',
+      run = 'make install_jsregexp'
+  }
+
+  use 'neovim/nvim-lspconfig'
+  use 'rafamadriz/friendly-snippets'
+  use 'romgrk/doom-one.vim'
+  use 'iissnan/tangox'
+  use 'akinsho/toggleterm.nvim'
+  use 'windwp/nvim-autopairs'
+  use 's1n7ax/nvim-window-picker'
+  use 'folke/tokyonight.nvim'
+  use 'sphamba/smear-cursor.nvim'
+  use 'folke/which-key.nvim'
+  use 'mfussenegger/nvim-lint'
+  use 'echasnovski/mini.icons'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'lewis6991/gitsigns.nvim'
+
+end)
