@@ -17,8 +17,13 @@ return require('packer').startup(function(use)
     run = ':TSUpdate', -- Command to run after installation/update
   }
 
-  use 'neoclide/coc.nvim'
+  use {
+	  'neoclide/coc.nvim',
+	  run = 'npm ci'
+  }
   use 'junegunn/fzf'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  use 'nativerv/cyrillic.nvim'
 
   use 'tpope/vim-surround'
   use 'nvim-neo-tree/neo-tree.nvim'
@@ -27,7 +32,6 @@ return require('packer').startup(function(use)
   use 'akinsho/bufferline.nvim'
   use 'nvimdev/galaxyline.nvim'
   use 'MunifTanjim/nui.nvim'
-  use 'nvim-lua/plenary.nvim'
   use 'nvim-tree/nvim-web-devicons'
   use 'akinsho/horizon.nvim'
   use 'NeogitOrg/neogit'
@@ -54,5 +58,6 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'lewis6991/gitsigns.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
 end)

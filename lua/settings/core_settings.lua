@@ -1,3 +1,8 @@
 vim.o.updatetime = 500
 vim.o.wrap = false
 vim.g.mapleader = " "
+vim.o.relativenumber = true
+vim.o.number = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = true

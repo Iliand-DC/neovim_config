@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/dudkin.i/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["coc.nvim"] = {
-    loaded = true,
-    path = "/home/dudkin.i/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
-  },
   ["doom-one.vim"] = {
     loaded = true,
     path = "/home/dudkin.i/.local/share/nvim/site/pack/packer/start/doom-one.vim",
