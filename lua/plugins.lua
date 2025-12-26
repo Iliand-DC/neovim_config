@@ -34,8 +34,8 @@ return require('packer').startup(function(use)
   use 'MunifTanjim/nui.nvim'
   use 'nvim-tree/nvim-web-devicons'
   use 'akinsho/horizon.nvim'
+  use "olimorris/onedarkpro.nvim"
   use 'NeogitOrg/neogit'
-  use 'navarasu/onedark.nvim'
   use 'shaunsingh/nord.nvim'
   use 'nvim-lualine/lualine.nvim'
   use {

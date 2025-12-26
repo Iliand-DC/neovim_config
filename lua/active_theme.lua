@@ -1,21 +1,3 @@
-require('onedark').setup {
-    style = 'deep',
-    term_colors = false,
-    colors = {
-        fg = '#dddddd',
-        bg = '#212236',
-        red = '#fa707a',
-        orange = '#ffe694'
-    },
-    code_style = {
-        comments = 'italic',
-        keywords = 'none',
-        functions = 'italic',
-        strings = 'italic',
-        variables = 'none'
-    },
-}
-
 require("tokyonight").setup({
     -- use the night style
     style = "storm",
@@ -25,4 +7,10 @@ require("tokyonight").setup({
     end
 })
 
-vim.cmd[[ colorscheme onedark ]]
+require("onedarkpro").setup({
+    colors = {
+        red = "#c5c5cc"
+    }
+})
+
+vim.cmd[[ colorscheme catppuccin-macchiato ]]
