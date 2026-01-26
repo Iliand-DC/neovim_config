@@ -9,8 +9,11 @@ require("tokyonight").setup({
 
 require("onedarkpro").setup({
     colors = {
-        red = "#c5c5cc"
+        onedark_dark = { 
+            fg = "#ffffff",
+            red = "#ffffff",
+        },
     }
 })
 
-vim.cmd[[ colorscheme catppuccin-macchiato ]]
+vim.cmd[[ colorscheme default ]]

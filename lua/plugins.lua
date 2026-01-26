@@ -17,13 +17,13 @@ return require('packer').startup(function(use)
     run = ':TSUpdate', -- Command to run after installation/update
   }
 
-  use {
-	  'neoclide/coc.nvim',
-	  run = 'npm ci'
-  }
+  use 'drsooch/gruber-darker-vim'
+  use 'hrsh7th/nvim-cmp'
   use 'junegunn/fzf'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
   use 'nativerv/cyrillic.nvim'
+  use 'veryl-lang/veryl.vim'
+  -- use 'brenton-leighton/multiple-cursors.nvim'
 
   use 'tpope/vim-surround'
   use 'nvim-neo-tree/neo-tree.nvim'
@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
   use 'NeogitOrg/neogit'
   use 'shaunsingh/nord.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'jake-stewart/multicursor.nvim'
   use {
       'L3MON4D3/LuaSnip',
       run = 'make install_jsregexp'
