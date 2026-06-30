@@ -1,5 +1,5 @@
 local config = {
-    cmd = {'jedi-language-server'},
+    cmd = {'pyright-langserver', '--stdio'},
     filetypes = {'python'},
     root_markers = {'.git', 'pyproject.toml'},
     on_attach = function(client, bufnr)
@@ -12,5 +12,5 @@ local config = {
     end
 }
 
-vim.lsp.config("jedi_ls", config)
-vim.lsp.enable('jedi_ls')
+vim.lsp.config("pyright_ls", config)
+vim.lsp.enable('pyright_ls')

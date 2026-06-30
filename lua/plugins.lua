@@ -1,64 +1,42 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd [[packadd packer.nvim]]
-end
-
-
--- useins.lua
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
-  -- Example with configuration options
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate', -- Command to run after installation/update
-  }
-
-  use 'drsooch/gruber-darker-vim'
-  use 'hrsh7th/nvim-cmp'
-  use 'junegunn/fzf'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
-  use 'nativerv/cyrillic.nvim'
-  use 'veryl-lang/veryl.vim'
-  -- use 'brenton-leighton/multiple-cursors.nvim'
-
-  use 'tpope/vim-surround'
-  use 'nvim-neo-tree/neo-tree.nvim'
-  use 'folke/flash.nvim'
-
-  use 'akinsho/bufferline.nvim'
-  use 'nvimdev/galaxyline.nvim'
-  use 'MunifTanjim/nui.nvim'
-  use 'nvim-tree/nvim-web-devicons'
-  use 'akinsho/horizon.nvim'
-  use "olimorris/onedarkpro.nvim"
-  use 'NeogitOrg/neogit'
-  use 'shaunsingh/nord.nvim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'jake-stewart/multicursor.nvim'
-  use {
-      'L3MON4D3/LuaSnip',
-      run = 'make install_jsregexp'
-  }
-
-  use 'neovim/nvim-lspconfig'
-  use 'rafamadriz/friendly-snippets'
-  use 'romgrk/doom-one.vim'
-  use 'iissnan/tangox'
-  use 'akinsho/toggleterm.nvim'
-  use 'windwp/nvim-autopairs'
-  use 's1n7ax/nvim-window-picker'
-  use 'folke/tokyonight.nvim'
-  use 'sphamba/smear-cursor.nvim'
-  use 'folke/which-key.nvim'
-  use 'mfussenegger/nvim-lint'
-  use 'echasnovski/mini.icons'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'lewis6991/gitsigns.nvim'
-  use { "catppuccin/nvim", as = "catppuccin" }
-
-end)
+vim.pack.add({
+  'https://github.com/nvim-treesitter/nvim-treesitter'        ,
+  'https://github.com/drsooch/gruber-darker-vim'              ,
+  'https://github.com/hrsh7th/nvim-cmp'                       ,
+  'https://github.com/junegunn/fzf'                           ,
+  'https://github.com/nativerv/cyrillic.nvim'                 ,
+  'https://github.com/veryl-lang/veryl.vim'                   ,
+  'https://github.com/wunki/gondolin.nvim'                    ,
+  'https://github.com/sainnhe/everforest'                     ,
+  'https://github.com/tpope/vim-surround'                     ,
+  'https://github.com/nvim-neo-tree/neo-tree.nvim'            ,
+  'https://github.com/folke/flash.nvim'                       ,
+  'https://github.com/AlexvZyl/nordic.nvim'                   ,
+  'https://github.com/projekt0n/github-nvim-theme'            ,
+  'https://github.com/akinsho/bufferline.nvim'                ,
+  'https://github.com/nvimdev/galaxyline.nvim'                ,
+  'https://github.com/MunifTanjim/nui.nvim'                   ,
+  'https://github.com/nvim-tree/nvim-web-devicons'            ,
+  'https://github.com/akinsho/horizon.nvim'                   ,
+  "https://github.com/olimorris/onedarkpro.nvim"              ,
+  'https://github.com/NeogitOrg/neogit'                       ,
+  'https://github.com/shaunsingh/nord.nvim'                   ,
+  'https://github.com/nvim-lualine/lualine.nvim'              ,
+  'https://github.com/jake-stewart/multicursor.nvim'          ,
+  'https://github.com/L3MON4D3/LuaSnip'			      ,
+  'https://github.com/neovim/nvim-lspconfig'                  ,
+  'https://github.com/rafamadriz/friendly-snippets'           ,
+  'https://github.com/romgrk/doom-one.vim'                    ,
+  'https://github.com/iissnan/tangox'                         ,
+  'https://github.com/akinsho/toggleterm.nvim'                ,
+  'https://github.com/windwp/nvim-autopairs'                  ,
+  'https://github.com/s1n7ax/nvim-window-picker'              ,
+  'https://github.com/folke/tokyonight.nvim'                  ,
+  'https://github.com/sphamba/smear-cursor.nvim'              ,
+  'https://github.com/folke/which-key.nvim'                   ,
+  'https://github.com/mfussenegger/nvim-lint'                 ,
+  'https://github.com/echasnovski/mini.icons'                 ,
+  'https://github.com/nvim-lua/plenary.nvim'                  ,
+  'https://github.com/nvim-telescope/telescope.nvim'          ,
+  'https://github.com/lewis6991/gitsigns.nvim'                ,
+  'https://github.com/catppuccin/nvim'			              ,
+})

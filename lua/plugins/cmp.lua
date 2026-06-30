@@ -3,12 +3,7 @@ local cmp = require 'cmp'
 cmp.setup({
   completion = {
     keyword_length = 1,
-    keyword_pattern = ".*",
-  },
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)  -- For luasnip users
-    end,
+    keyword_pattern = "*",
   },
   mapping = {
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
@@ -20,12 +15,11 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'tags' },
   },
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
 })
+
 

@@ -1,7 +1,5 @@
 require("tokyonight").setup({
-    -- use the night style
-    style = "storm",
-    -- change foreground color to white
+    style = "moon",
     on_colors = function(colors)
         colors.fg = "#ffffff"
     end
@@ -9,11 +7,10 @@ require("tokyonight").setup({
 
 require("onedarkpro").setup({
     colors = {
-        onedark_dark = { 
-            fg = "#ffffff",
-            red = "#ffffff",
+        onedark_vivid = { 
+            fg = "#dcdcdc",
         },
     }
 })
 
-vim.cmd[[ colorscheme default ]]
+vim.cmd[[ colorscheme tokyonight-moon ]]

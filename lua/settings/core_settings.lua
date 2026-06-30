@@ -20,3 +20,10 @@ vim.o.smartcase = true
 
 vim.o.undofile = true
 vim.o.swapfile = false
+
+vim.o.completeopt = "menuone,noselect,fuzzy"
+vim.o.autocomplete = true
+
+-- turn off autocomplete in telescope window and bring it back after leaving
+vim.cmd('autocmd FileType TelescopePrompt lua vim.o.autocomplete = false')
+vim.cmd('autocmd BufLeave * if &filetype == "TelescopePrompt" | lua vim.o.autocomplete = true')
