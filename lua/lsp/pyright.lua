@@ -12,5 +12,19 @@ local config = {
     end
 }
 
+vim.api.nvim_create_augroup("AutoFormat", {})
+
+vim.api.nvim_create_autocmd(
+    "BufWritePost",
+    {
+        pattern = "*.py",
+        group = "AutoFormat",
+        callback = function()
+            vim.cmd("silent !ruff format %")            
+            vim.cmd("edit")
+        end,
+    }
+)
+
 vim.lsp.config("pyright_ls", config)
 vim.lsp.enable('pyright_ls')

@@ -1,5 +1,3 @@
-vim.o.updatetime = 500
-
 vim.g.mapleader = " "
 
 vim.o.relativenumber = true
