@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "bufferline.nvim": {
-      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-      "src": "https://github.com/akinsho/bufferline.nvim"
-    },
     "cyrillic.nvim": {
       "rev": "86186af29eed2af1a069f9e36140d116a2765c80",
       "src": "https://github.com/nativerv/cyrillic.nvim"
@@ -15,10 +11,6 @@
     "fzf": {
       "rev": "e0d081906fd7a31b656b1d022042abcd1dcc0927",
       "src": "https://github.com/junegunn/fzf"
-    },
-    "galaxyline.nvim": {
-      "rev": "20f5f750002532a35193f55cd499074fc97d933d",
-      "src": "https://github.com/nvimdev/galaxyline.nvim"
     },
     "gitsigns.nvim": {
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",

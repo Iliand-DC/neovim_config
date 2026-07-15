@@ -6,8 +6,6 @@ vim.pack.add({
   'https://github.com/tpope/vim-surround'                     ,
   'https://github.com/nvim-neo-tree/neo-tree.nvim'            ,
   'https://github.com/folke/flash.nvim'                       ,
-  'https://github.com/akinsho/bufferline.nvim'                ,
-  'https://github.com/nvimdev/galaxyline.nvim'                ,
   'https://github.com/MunifTanjim/nui.nvim'                   ,
   'https://github.com/nvim-tree/nvim-web-devicons'            ,
   'https://github.com/akinsho/horizon.nvim'                   ,

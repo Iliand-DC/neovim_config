@@ -3,6 +3,12 @@ vim.g.mapleader = " "
 vim.o.relativenumber = true
 vim.o.number = true
 
+
+vim.o.timeoutlen = 300
+vim.o.ttimeoutlen = 10
+vim.o.updatetime = 250
+vim.o.scrolloff = 8
+
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.expandtab = true
