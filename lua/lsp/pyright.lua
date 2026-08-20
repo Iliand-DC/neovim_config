@@ -1,5 +1,5 @@
 local config = {
-    cmd = {'pyright-langserver', '--stdio'},
+    cmd = {'basedpyright-langserver', '--stdio'},
     filetypes = {'python'},
     root_markers = {'.git', 'pyproject.toml'},
     on_attach = function(client, bufnr)
