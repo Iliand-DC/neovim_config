@@ -28,4 +28,12 @@ vim.pack.add({
   'https://github.com/ribru17/bamboo.nvim',
   'https://github.com/neanias/everforest-nvim',
   'https://github.com/WeiTing1991/suannhai.nvim',
+  'https://github.com/mfussenegger/nvim-dap.git',
+  'https://github.com/nvim-neotest/nvim-nio.git',
+  'https://github.com/rcarriga/nvim-dap-ui.git',
+  'https://github.com/Shatur/neovim-ayu.git',
+  'https://github.com/f4z3r/gruvbox-material.nvim',
+  'https://github.com/folke/tokyonight.nvim',
+  'https://github.com/veryl-lang/veryl.vim',
+  'https://github.com/theHamsta/nvim-dap-virtual-text',
 })

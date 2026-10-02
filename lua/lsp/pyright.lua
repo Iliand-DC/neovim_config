@@ -28,3 +28,12 @@ vim.api.nvim_create_autocmd(
 
 vim.lsp.config("pyright_ls", config)
 vim.lsp.enable('pyright_ls')
+
+local ruff_config = {
+    cmd = {'ruff', 'server'},
+    filetypes = {'python'},
+    root_markers = {'.git', 'pyproject.toml'},
+}
+
+vim.lsp.config('ruff_ls', ruff_config)
+vim.lsp.enable('ruff_ls')

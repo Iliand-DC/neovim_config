@@ -31,3 +31,4 @@ vim.o.autocomplete = true
 -- turn off autocomplete in telescope window and bring it back after leaving
 vim.cmd('autocmd FileType TelescopePrompt lua vim.o.autocomplete = false')
 vim.cmd('autocmd BufLeave * if &filetype == "TelescopePrompt" | lua vim.o.autocomplete = true')
+vim.cmd('autocmd BufNewFile,BufRead *.svd set filetype=xml ')
