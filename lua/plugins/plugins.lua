@@ -36,4 +36,8 @@ vim.pack.add({
   'https://github.com/folke/tokyonight.nvim',
   'https://github.com/veryl-lang/veryl.vim',
   'https://github.com/theHamsta/nvim-dap-virtual-text',
+  'https://github.com/carlos-algms/agentic.nvim',
+  'https://github.com/nchhillar2004/gemini.nvim',
+  'https://github.com/projekt0n/github-nvim-theme',
+  'https://github.com/felipeagc/fleet-theme-nvim',
 })

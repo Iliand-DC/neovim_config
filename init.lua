@@ -8,6 +8,7 @@ require 'plugins.treesitter'
 require 'plugins.cyrillic'
 require 'plugins.cmp'
 require 'plugins.dap'
+require 'plugins.opencode'
 
 require 'settings.theme'
 require 'settings.core_settings'

@@ -1,8 +1,24 @@
 {
   "plugins": {
+    "agentic.nvim": {
+      "rev": "e280deec82cfe642bba2c0d0157d320b706c094a",
+      "src": "https://github.com/carlos-algms/agentic.nvim"
+    },
+    "agents.nvim": {
+      "rev": "26fec668f4c6283997d8ba953fc2d928a6810dcc",
+      "src": "https://github.com/RobertTLange/agents.nvim"
+    },
+    "avante.nvim": {
+      "rev": "d6d41049f3cdcd8a484b523de7f03551ea977653",
+      "src": "https://github.com/avante-corp/avante.nvim"
+    },
     "bamboo.nvim": {
       "rev": "1309bc88bffcf1bedc3e84e7fa9004de93da774a",
       "src": "https://github.com/ribru17/bamboo.nvim"
+    },
+    "codecompanion.nvim": {
+      "rev": "3dd1ef7fa8d6aeb27020023e40293bac588de714",
+      "src": "https://github.com/olimorris/codecompanion.nvim"
     },
     "cyrillic.nvim": {
       "rev": "86186af29eed2af1a069f9e36140d116a2765c80",
@@ -16,9 +32,21 @@
       "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "https://github.com/folke/flash.nvim"
     },
+    "fleet-theme-nvim": {
+      "rev": "45c300c31485def326db00d9c857760d50e5c728",
+      "src": "https://github.com/felipeagc/fleet-theme-nvim"
+    },
     "fzf": {
       "rev": "15f64c492a08f0840b81540c7d1de35737448086",
       "src": "https://github.com/junegunn/fzf"
+    },
+    "gemini.nvim": {
+      "rev": "82f759ed17669bd9127785ee65ee4f87926e5319",
+      "src": "https://github.com/nchhillar2004/gemini.nvim"
+    },
+    "github-nvim-theme": {
+      "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
+      "src": "https://github.com/projekt0n/github-nvim-theme"
     },
     "gitsigns.nvim": {
       "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
@@ -68,6 +96,10 @@
       "rev": "a25dd472316d806eb38a5dd667c2e40da5570c75",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim-acai": {
+      "rev": "c17acbe2cf2804bf97bbfae580ccdf8e02069add",
+      "src": "https://github.com/ofcRS/nvim-acai"
+    },
     "nvim-autopairs": {
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -111,6 +143,10 @@
     "nvim-window-picker": {
       "rev": "6382540b2ae5de6c793d4aa2e3fe6dbb518505ec",
       "src": "https://github.com/s1n7ax/nvim-window-picker"
+    },
+    "opencode.nvim": {
+      "rev": "06770e2e3618b82703e3e7af1f2d5dc67bde0002",
+      "src": "https://github.com/nickjvandyke/opencode.nvim"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",

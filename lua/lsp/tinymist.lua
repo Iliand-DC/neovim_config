@@ -6,4 +6,4 @@ lsp.config['tinymist'] = {
 	root_markers = {'.git', 'Cargo.toml', 'main.typ'}
 }
 
-lsp.enable('tinymist')
+-- lsp.enable('tinymist')
