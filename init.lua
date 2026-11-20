@@ -163,6 +163,11 @@ require("telescope").setup({
     }
 })
 
+-- turn off autocomplete in telescope window and bring it back after leaving
+vim.cmd('autocmd FileType TelescopePrompt lua vim.o.autocomplete = false')
+vim.cmd('autocmd BufLeave * if &filetype == "TelescopePrompt" | lua vim.o.autocomplete = true')
+vim.cmd('autocmd BufNewFile,BufRead *.svd set filetype=xml ')
+
 
 
 -- DAP
@@ -388,7 +393,6 @@ api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged", "InsertLeav
     group = api.nvim_create_augroup("nvim_lint", { clear = true }),
     callback = function()
         vim.defer_fn(function()
-            -- try_lint() will run every linter configured with linters_by_ft().
             lint.try_lint()
         end, 1)
     end,
