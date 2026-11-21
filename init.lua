@@ -23,6 +23,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.updatetime = 300
 vim.o.signcolumn = "yes"
+vim.o.termguicolors = true
 
 
 
@@ -69,90 +70,21 @@ vim.pack.add({
   "https://github.com/nchhillar2004/gemini.nvim",
   "https://github.com/projekt0n/github-nvim-theme",
   "https://github.com/felipeagc/fleet-theme-nvim",
+  "https://github.com/Dmich98/caelus.nvim",
+  "https://github.com/norcalli/nvim-colorizer.lua.git",
+  "https://github.com/jake-stewart/multicursor.nvim",
 })
 
 
 
 -- THEME
-vim.o.background = "dark"
-vim.cmd.colorscheme("fleet")
-
-
-
--- KEYBINDINGS
-local map = vim.keymap.set
-local builtin = require("telescope.builtin")
-local actions = require("telescope.actions")
-map("n", "H", ":BufferLineCyclePrev<CR>", {desc="Move to previous tab", silent=true})
-map("n", "L", ":BufferLineCycleNext<CR>", {desc="Move to next tab", silent=true})
-map("n", "<leader>bk", ":BufferLinePickClose<CR>", {desc="Close buffer", silent=true})
-map("n", "<leader>o", "")
-map("n", "<leader>o", ":BufferLinePick<CR>", {desc="Pick buffer from buffer line", silent=true})
-map("n", "<leader>z", ":BufferLineCloseOthers<CR>", {desc="Close all buffers except current", silent=true})
-map("n", "<leader>k", ":BufferLineCyclePrev<CR> :BufferLineCloseRight<CR>", {desc="Close current buffer", silent=true})
-map("n", "<leader>di", vim.diagnostic.open_float, {desc="Open diagnostic window"})
-map("i", "<C-s>", "<Esc>:w<Enter>", {desc = "Change to normal mode and save"})
-map("t", "<Esc>", [[<C-\><C-n>]])
-map("n", "<C-s>", "<Esc>:w<Enter>", {desc = "Change to normal mode and save"})
-map("n", "<Esc><Esc>", ":noh<Enter>", {silent = true})
-map("n", "<leader>rc", ":luafile ~/.config/nvim/", {desc = "Load config file"})
-map("n", "<leader>lf", ":luafile %<CR>", {desc = "Load current Lua file"})
-map("n", "H", ":tabp<CR>", {desc = "Previous tab"})
-map("n", "L", ":tabn<CR>", {desc = "Next tab"})
-map("n", "<leader>ka", ":%bd<CR>:e#<CR>", { desc = "Kill all buffers except current one", silent = true })
-map("n", "gh", "0", {desc = "Go to start of the line"})
-map("n", "gl", "$", {desc = "Go to end of the line"})
-map("n", "gp", "%", {desc = "Go to pair symbol"})
-map("n", "s", function() require("flash").jump() end, {desc = "Flash"})
-map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", {desc = "LSP rename symbol"})
-map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", {desc = "LSP find symbol definition"})
-map("n", "<leader>gr", ":lua vim.lsp.buf.references()<CR>", {desc = "LSP find symbol references"})
-map("n", "<leader>a", ":lua vim.lsp.buf.code_action()<CR>", {desc = "LSP code action"})
-map("n", "<leader>e", "")
-map("n", "<leader>e", ":Neotree toggle<CR>", {desc="Open/close navigation tree", silent=true})
-map("n", "<leader>hc", ":e ~/.config/nvim/", {desc="Open config file"})
-map("n", "<leader>hv", ":e ~/.vimrc<CR>", {desc="Open vim config"})
-map("n", "<C-h>", "<C-w>h", {desc="Move to left panel"})
-map("n", "<C-j>", "<C-w>j", {desc="Move to bottom panel"})
-map("n", "<C-k>", "<C-w>k", {desc="Move to top panel"})
-map("n", "<C-l>", "<C-w>l", {desc="Move to right panel"})
-map("n", "<C-,>", "<C-w><", {desc="Decrease width"})
-map("n", "<C-.>", "<C-w>>", {desc="Increase width"})
-map("n", "<leader>tn", ":tabn<CR>", {desc="Next tab"})
-map("n", "<leader>tp", ":tabp<CR>", {desc="Previous tab"})
-map("n", "<leader>tw", ":tabnew<CR>", {desc="New tab"})
-map("n", "<leader>tn", ":tabn<CR>", {desc="Next tab"})
-map("n", "<leader>tp", ":tabp<CR>", {desc="Previous tab"})
-map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-map("n", "<F5>", function() require("dapui").open() require("dap").continue() end, {desc = "Continue"})
-map("n", "<F6>", function() require("dap").close() require("dapui").close() end, {desc = "Close"})
-map("n", "<F10>", function() require("dap").step_over() end, {desc = "Step Over"})
-map("n", "<F11>", function() require("dap").step_into() end, {desc = "Step Into"})
-map("n", "<F12>", function() require("dap").step_out() end, {desc = "Step Out"})
-map("n", "<leader>b", function() require("dap").toggle_breakpoint() end, {desc = "Toggle Breakpoint"})
-map("n", "<leader>B", function() require("dap").set_breakpoint() end, {desc = "Set Breakpoint"})
-map("n", "<leader>lp", function() require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end)
-map("n", "<leader>dr", function() require("dap").repl.open() end, {desc = "Open REPL"})
-map("n", "<leader>dl", function() require("dap").run_last() end, {desc = "Run Last"})
-map({"n", "l"}, "<leader>dh", function() require("dap.ui.widgets").hover() end)
-map({"n", "v"}, "<leader>dp", function() require("dap.ui.widgets").preview() end)
-map("n", "<leader>df", function()
-  local widgets = require("dap.ui.widgets")
-  widgets.centered_float(widgets.frames)
-end)
-map("n", "<leader>ds", function()
-  local widgets = require("dap.ui.widgets")
-  widgets.centered_float(widgets.scopes)
-end)
-map("n", "<leader>dt", function() require("dapui").toggle() end, {desc = "Toggle DAP UI"})
-map({ "n" }, "<C-\">", ":lua require(\"agentic\").toggle()<CR>", { desc = "Toggle Agentic Chat" })
+vim.cmd.colorscheme("caelus")
 
 
 
 -- TELESCOPE
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 require("telescope").setup({
     defaults = {
         mappings = {
@@ -507,3 +439,96 @@ require("toggleterm").setup({
     open_mapping = [[<C-\>]],
     autochdir = true,
 })
+
+
+
+-- COLORIZER
+require("colorizer").setup()
+
+
+
+-- MULTICURSOR
+local mc = require("multicursor-nvim")
+mc.setup()
+
+
+-- KEYBINDINGS
+local map = vim.keymap.set
+map("n", "H", ":BufferLineCyclePrev<CR>", {desc="Move to previous tab", silent=true})
+map("n", "L", ":BufferLineCycleNext<CR>", {desc="Move to next tab", silent=true})
+map("n", "<leader>bk", ":BufferLinePickClose<CR>", {desc="Close buffer", silent=true})
+map("n", "<leader>o", "")
+map("n", "<leader>o", ":BufferLinePick<CR>", {desc="Pick buffer from buffer line", silent=true})
+map("n", "<leader>z", ":BufferLineCloseOthers<CR>", {desc="Close all buffers except current", silent=true})
+map("n", "<leader>di", vim.diagnostic.open_float, {desc="Open diagnostic window"})
+map("i", "<C-s>", "<Esc>:w<Enter>", {desc = "Change to normal mode and save"})
+map("t", "<Esc>", [[<C-\><C-n>]])
+map("n", "<C-s>", "<Esc>:w<Enter>", {desc = "Change to normal mode and save"})
+map("n", "<Esc><Esc>", ":noh<Enter>", {silent = true})
+map("n", "<leader>rc", ":luafile ~/.config/nvim/", {desc = "Load config file"})
+map("n", "<leader>lf", ":luafile %<CR>", {desc = "Load current Lua file"})
+map("n", "H", ":tabp<CR>", {desc = "Previous tab"})
+map("n", "L", ":tabn<CR>", {desc = "Next tab"})
+map("n", "<leader>ka", ":%bd<CR>:e#<CR>", { desc = "Kill all buffers except current one", silent = true })
+map("n", "gh", "0", {desc = "Go to start of the line"})
+map("n", "gl", "$", {desc = "Go to end of the line"})
+map("n", "gp", "%", {desc = "Go to pair symbol"})
+map("n", "s", function() require("flash").jump() end, {desc = "Flash"})
+
+map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", {desc = "LSP rename symbol"})
+map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", {desc = "LSP find symbol definition"})
+map("n", "<leader>gr", ":lua vim.lsp.buf.references()<CR>", {desc = "LSP find symbol references"})
+map("n", "<leader>a", ":lua vim.lsp.buf.code_action()<CR>", {desc = "LSP code action"})
+
+map("n", "<leader>e", "")
+map("n", "<leader>e", ":Neotree toggle<CR>", {desc="Open/close navigation tree", silent=true})
+
+map("n", "<C-h>", "<C-w>h", {desc="Move to left panel"})
+map("n", "<C-j>", "<C-w>j", {desc="Move to bottom panel"})
+map("n", "<C-k>", "<C-w>k", {desc="Move to top panel"})
+map("n", "<C-l>", "<C-w>l", {desc="Move to right panel"})
+map("n", "<C-,>", "<C-w><", {desc="Decrease width"})
+map("n", "<C-.>", "<C-w>>", {desc="Increase width"})
+
+map("n", "<leader>tn", ":tabn<CR>", {desc="Next tab"})
+map("n", "<leader>tp", ":tabp<CR>", {desc="Previous tab"})
+map("n", "<leader>tw", ":tabnew<CR>", {desc="New tab"})
+map("n", "<leader>tn", ":tabn<CR>", {desc="Next tab"})
+map("n", "<leader>tp", ":tabp<CR>", {desc="Previous tab"})
+
+map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+
+map("n", "<F5>", function() require("dapui").open() require("dap").continue() end, {desc = "Continue"})
+map("n", "<F6>", function() require("dap").close() require("dapui").close() end, {desc = "Close"})
+map("n", "<F10>", function() require("dap").step_over() end, {desc = "Step Over"})
+map("n", "<F11>", function() require("dap").step_into() end, {desc = "Step Into"})
+map("n", "<F12>", function() require("dap").step_out() end, {desc = "Step Out"})
+map("n", "<leader>b", function() require("dap").toggle_breakpoint() end, {desc = "Toggle Breakpoint"})
+map("n", "<leader>B", function() require("dap").set_breakpoint() end, {desc = "Set Breakpoint"})
+map("n", "<leader>lp", function() require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end)
+map("n", "<leader>dr", function() require("dap").repl.open() end, {desc = "Open REPL"})
+map("n", "<leader>dl", function() require("dap").run_last() end, {desc = "Run Last"})
+map({"n", "l"}, "<leader>dh", function() require("dap.ui.widgets").hover() end)
+map({"n", "v"}, "<leader>dp", function() require("dap.ui.widgets").preview() end)
+map("n", "<leader>df", function()
+  local widgets = require("dap.ui.widgets")
+  widgets.centered_float(widgets.frames)
+end)
+map("n", "<leader>ds", function()
+  local widgets = require("dap.ui.widgets")
+  widgets.centered_float(widgets.scopes)
+end)
+map("n", "<leader>dt", function() require("dapui").toggle() end, {desc = "Toggle DAP UI"})
+
+map({ "n" }, "<C-\">", ":lua require(\"agentic\").toggle()<CR>", { desc = "Toggle Agentic Chat" })
+
+map({"n"}, "<C-k>", function() mc.lineAddCursor(-1) end)
+map({"n"}, "<C-j>", function() mc.lineAddCursor(1) end)
+map("n", "<leader>a", mc.alignCursors)
+map("x", "M", mc.matchCursors)
+map({"n", "x"}, "<leader>A", mc.matchAllAddCursors)
+map({"n"}, "<C-q>", function() mc.clearCursors() end)
+
