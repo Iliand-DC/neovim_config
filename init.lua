@@ -31,7 +31,7 @@ vim.pack.add({
     "https://github.com/nativerv/cyrillic.nvim",
     "https://github.com/tpope/vim-surround",
     "https://github.com/folke/flash.nvim",
-    "https://github.com/ojroques/nvim-hardline",
+    "https://github.com/nvim-lualine/lualine.nvim",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/akinsho/toggleterm.nvim",
     "https://github.com/windwp/nvim-autopairs",
@@ -127,8 +127,8 @@ require("flash").setup({
 })
 
 
--- HARDLINE
-require('hardline').setup()
+-- LUALINE
+require('lualine').setup()
 
 
 -- TOGGLETERM
