@@ -128,9 +128,7 @@ require("flash").setup({
 
 
 -- HARDLINE
-require('hardline').setup({
-    theme = "one"
-})
+require('hardline').setup()
 
 
 -- TOGGLETERM
