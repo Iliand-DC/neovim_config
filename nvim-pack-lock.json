@@ -12,25 +12,13 @@
       "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "https://github.com/folke/flash.nvim"
     },
-    "fzf": {
-      "rev": "15f64c492a08f0840b81540c7d1de35737448086",
-      "src": "https://github.com/junegunn/fzf"
-    },
     "fzf-lua": {
       "rev": "a3b5e6bebcc604d0286fffa1c4eb05b066a2a198",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
-    "lualine.nvim": {
-      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
-      "src": "https://github.com/nvim-lualine/lualine.nvim"
-    },
     "mini.icons": {
       "rev": "98faae31e9be1cc054ae63485e58ceb185efcad0",
       "src": "https://github.com/echasnovski/mini.icons"
-    },
-    "neo-tree.nvim": {
-      "rev": "0bd0eea2e445bcb110fd202526ccb14d04c74e15",
-      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
     },
     "nvim-autopairs": {
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
@@ -39,6 +27,10 @@
     "nvim-cmp": {
       "rev": "2ffe79f1f021def8dd1fcd81deb16f1bb0d989f3",
       "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
+    "nvim-hardline": {
+      "rev": "9b85ebfba065091715676fb440c16a37c465b9a5",
+      "src": "https://github.com/ojroques/nvim-hardline"
     },
     "nvim-lspconfig": {
       "rev": "fbaef6156f9ad65790931ab543ab1dfec57bbec7",
